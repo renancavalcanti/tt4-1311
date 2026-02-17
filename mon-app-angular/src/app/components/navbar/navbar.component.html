@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <a routerLink="/materials" class="navbar-brand">Material HUB</a>
+  <div class="navbar-menu">
+
+    <ng-container *ngIf="isLoggedIn">
+      <a routerLink="/materials/new" routerLinkActive="active" class="nav-link">New Material</a>
+      <span class="nav-user">{{currentUser?.name}}</span>
+      <button (click)="logout()" class="nav-link btn-logout">Logout</button>
+    </ng-container>
+
+    <ng-container *ngIf="!isLoggedIn">
+      <a routerLink="/login" routerLinkActive="active" class="nav-link">Login</a>
+      <a routerLink="/signup" routerLinkActive="active" class="nav-link">Sign Up</a>
+    </ng-container>
+
+  </div>
+</nav>
