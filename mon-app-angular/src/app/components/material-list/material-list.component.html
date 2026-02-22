@@ -1,1 +1,20 @@
-<p>material-list works!</p>
+<div class="page-container">
+
+
+  <div class="material-list">
+    <div *ngFor="let m of materials" class="material-card">
+      <div class="card-content">
+        <h4>{{m.title}}</h4>
+        <p class="meta">{{m.course_code}} - {{m.course_name}}</p>
+        <p class="meta">Professor: {{m.professor}} - {{m.semester}}</p>
+        <p class="description">{{m.description}}</p>
+        <small class="card-author">By: {{m.posted_by_user.email}}</small>
+      </div>
+
+      <div class="card-actions">
+        <a [href]="m.url" target="_blank" class="btn btn-view">View</a>
+      </div>
+
+    </div>
+  </div>
+</div>

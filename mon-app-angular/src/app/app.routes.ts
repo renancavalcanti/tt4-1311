@@ -5,6 +5,8 @@ import { GithubUsersComponent } from './components/github-users/github-users.com
 import { LoginComponent } from './components/login/login.component';
 import { MaterialListComponent } from './components/material-list/material-list.component';
 import {RegisterComponent} from './components/register/register.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { MaterialFormComponent } from './components/material-form/material-form.component';
 
 export const routes: Routes = [
   {path: 'counter', component: CounterComponent},
@@ -13,4 +15,6 @@ export const routes: Routes = [
   {path: 'materials', component: MaterialListComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent}
+  {path: 'signup', component: SignupComponent},
+  {path: 'materials/new', component: MaterialFormComponent}
 ];

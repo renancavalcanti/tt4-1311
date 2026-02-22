@@ -4,4 +4,35 @@
   <a routerLink="/products">Products</a>
 </div>
 
+<p *ngIf="isLoggedIn; else notLoggedIn">You are Logged</p>
+
+<ng-template #notLoggedIn>
+  <p>You are not logged in!</p>
+</ng-template>
+
+<ul>
+  <li *ngFor="let item of items">
+      {{item}}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let item of items, let i = index">
+      {{i}} - {{item}}
+  </li>
+</ul>
+
+<div [ngClass]="{'highlight': isActive}">
+  Conditional Class
+</div>
+
+<div [ngStyle]="{'color': textColor, 'font-size': fontSize + 'px'}">
+  Style with ngStyle
+</div>
+
+<app-counter></app-counter>
+
+<app-counter [name]="'COUNTER NAME'"></app-counter> -->
+
+<app-navbar></app-navbar>
 <router-outlet></router-outlet>

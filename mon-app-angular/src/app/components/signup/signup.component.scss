@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  background: linear-gradient(135deg, rgb(103, 159, 231), rgb(58, 127, 218));
+  background: linear-gradient(135deg, rgb(245, 142, 95), rgb(247, 125, 68));
 }
 
 form {
@@ -42,12 +42,13 @@ input{
 
 .error{
   color: red;
+  margin-bottom: 15px;
 }
 
 button{
   width: 100%;
   padding: 15px;
-  background: rgb(145, 204, 55);
+  background: rgb(55, 120, 204);
   color: rgb(255, 255, 255);
   border: none;
   border-radius: 10px;
@@ -55,6 +56,6 @@ button{
   cursor: pointer;
 
   &:hover{
-    background: rgb(64, 97, 14);
+    background: rgb(14, 50, 97);
   }
 }

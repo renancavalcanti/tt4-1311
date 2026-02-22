@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -30,10 +30,13 @@ export class LoginComponent {
     }).subscribe({
       next: (res) => {
         console.log(res);
+        this.auth.setToken(res.access_token);
+        this.auth.setCurrentUser(res.user);
         this.router.navigate(['/materials']);
       },
-      error: () => {
-        this.errorMessage = "Invalid credentials!";
+      error: (err)=>{
+        console.log(err);
+        this.errorMessage = "Invalid Credentials!";
       }
     });
   }
